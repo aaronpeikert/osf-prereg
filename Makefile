@@ -2,7 +2,10 @@ PROJECT := osf_prereg
 WORKDIR := $(CURDIR)
 
 # list below your targets and their recipies
-all: osf-registrations.csv
+all: osf-registrations.csv osf-registrations.csv.tar.gz
+
+osf-registrations.csv.tar.gz: osf-registrations.csv
+	$(RUN1) gzip -c $< > $@ $(RUN1)
 
 osf-registrations.csv: R/flatten.R osf-jsons
 	$(RUN1) Rscript -e 'source("$<")' $(RUN2)
