@@ -1,0 +1,11 @@
+RUN install2.r --error --skipinstalled \ 
+  curl \ 
+  dplyr \ 
+  fs \ 
+  here \ 
+  jsonlite \ 
+  lubridate \ 
+  magrittr \ 
+  purrr \ 
+  readr \ 
+  stringr

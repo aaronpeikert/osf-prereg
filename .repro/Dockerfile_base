@@ -1,0 +1,7 @@
+FROM rocker/r-ver:4.1.0
+ARG BUILD_DATE=2021-08-18
+WORKDIR /home/rstudio
+RUN MRAN=https://mran.microsoft.com/snapshot/${BUILD_DATE} \
+  && echo MRAN=$MRAN >> /etc/environment \
+  && export MRAN=$MRAN \
+  && echo "options(repos = c(CRAN='$MRAN'), download.file.method = 'libcurl')" >> /usr/local/lib/R/etc/Rprofile.site

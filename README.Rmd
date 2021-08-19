@@ -1,0 +1,32 @@
+---
+output: github_document
+repro:
+  packages:
+    - jsonlite
+    - lubridate
+    - fs
+    - purrr
+    - dplyr
+    - stringr
+    - magrittr
+    - here
+    - readr
+    - curl
+---
+
+<!-- README.md is generated from README.Rmd. Please edit that file -->
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+# OSF Preregistrations
+
+<!-- badges: start -->
+<!-- badges: end -->
+
+This repository simply scrapes the Open Science Framework's (OSF) API to get all preregistrations posted there since 2018 (2018-01-01) till today (`r Sys.Date()`).
+No magic involved, just asking the api and flattening the JSON into a single string and extracting attached files.
